@@ -1,0 +1,117 @@
+﻿@model IEnumerable<ICareAlz.Models.Localidad>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Municipio.Nombre)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Clave)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Nombre)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Latitud)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Longitud)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Altitud)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Carta)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Ambito)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Poblacion)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Femenino)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Masculino)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Viviendas)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Lat)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Lng)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Activo)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Municipio.Nombre)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Clave)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Nombre)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Latitud)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Longitud)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Altitud)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Carta)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Ambito)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Poblacion)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Femenino)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Masculino)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Viviendas)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Lat)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Lng)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Activo)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.LocalidadId }) |
+            @Html.ActionLink("Details", "Details", new { id=item.LocalidadId }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.LocalidadId })
+        </td>
+    </tr>
+}
+
+</table>

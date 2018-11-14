@@ -1,0 +1,71 @@
+﻿@model IEnumerable<ICareAlz.Models.Solicitud>
+
+@{
+    ViewBag.Title = "Solicitudes";
+}
+
+<h2>Lista de Solicitudes</h2>
+
+<hr />
+<br />
+<p>
+    <h4>Solicitudes Aceptadas</h4>
+    @Html.ActionLink("Ir", "SolicitudesAceptadas", new { }, new { @class = "btn btn-success" })
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Categoria)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.FechaEnvio)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Nombre)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.FullAddress)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Telefono)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Correo)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Logo)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Categoria.Nombre)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.FechaEnvio)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Nombre)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.FullAddress)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Telefono)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Correo)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Logo)
+            </td>
+            <td>
+                @Html.ActionLink(" ", "Details", new { id = item.SolicitudId }, new { @class = "btn btn-warning glyphicon glyphicon-list-alt" }) |
+            </td>
+        </tr>
+    }
+
+</table>

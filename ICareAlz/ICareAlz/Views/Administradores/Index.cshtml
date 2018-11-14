@@ -1,0 +1,74 @@
+﻿@model IEnumerable<ICareAlz.Models.Administrador>
+
+@{
+    ViewBag.Title = "Administrador";
+}
+
+<h2>Lista de Administradores</h2>
+
+<p>
+    @Html.ActionLink("Agregar", "Create", new { }, new { @class="btn btn-primary"})
+</p>
+<br />
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Nombre)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Apellidos)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Direccion)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Telefono)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Fechanan)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Foto)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Correo)
+        </th>
+        
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Nombre)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Apellidos)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Direccion)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Telefono)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Fechanan)
+        </td>
+        <td>
+            @if (!string.IsNullOrEmpty(item.Foto))
+            {
+                <img src="@Url.Content(item.Foto)" alt="Image" style="width:70px;height:70px;max-width:70%; height:auto;" />
+            }
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Correo)
+        </td>
+        <td>
+            @Html.ActionLink(" ", "Edit", new { id = item.AdministradorId }, new { @class = "btn btn-info glyphicon glyphicon-pencil" }) |
+            @Html.ActionLink(" ", "Details", new { id = item.AdministradorId }, new { @class = "btn btn-warning glyphicon glyphicon-list-alt" }) |
+            @Html.ActionLink(" ", "Delete", new { id = item.AdministradorId }, new { @class = "btn btn-danger glyphicon glyphicon-trash" })
+        </td>
+    </tr>
+}
+
+</table>

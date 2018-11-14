@@ -1,0 +1,138 @@
+﻿@model ICareAlz.Models.Localidad
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Localidad</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Municipio.Nombre)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Municipio.Nombre)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Clave)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Clave)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Nombre)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Nombre)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Latitud)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Latitud)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Longitud)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Longitud)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Altitud)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Altitud)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Carta)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Carta)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Ambito)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Ambito)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Poblacion)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Poblacion)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Femenino)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Femenino)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Masculino)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Masculino)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Viviendas)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Viviendas)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Lat)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Lat)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Lng)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Lng)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Activo)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Activo)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.LocalidadId }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
