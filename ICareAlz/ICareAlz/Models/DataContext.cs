@@ -35,5 +35,11 @@
         public DbSet<Solicitud> Solicituds { get; set; }
 
         public DbSet<Instituto> Institutos { get; set; }
+
+        public DbSet<Pregunta> Preguntas { get; set; }
+
+        public DbSet<Respuesta> Respuestas { get; set; }
+
+        public DbSet<Test> Tests { get; set; }
     }
 }

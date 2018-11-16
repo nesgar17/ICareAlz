@@ -1,0 +1,61 @@
+﻿@model ICareAlz.Models.Respuesta
+
+@{
+    ViewBag.Title = "Hacer Test";
+}
+
+<h2>Hacer Test</h2>
+
+@*@Html.DisplayNameFor(model => model.Pregunta.Nombre)
+
+    @foreach (var item in Model.FirstOrDefault().Respuestas)
+    {
+        @Html.LabelFor(Model => item.Nombre, htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            <div class="checkbox">
+                @Html.EditorFor(model => item.Valor)
+                @Html.ValidationMessageFor(model => item.Valor, "", new { @class = "text-danger" })
+            </div>
+        </div>
+    }*@
+
+
+@foreach (var item in Model.Pregunta.Respuestas)
+{
+    @Html.LabelFor(Model => item.Pregunta.Nombre, htmlAttributes: new { @class = "control-label col-md-2" })
+    <div class="col-md-10">
+        <div class="checkbox">
+            @Html.EditorFor(model => item.Valor)
+            @Html.ValidationMessageFor(model => item.Valor, "", new { @class = "text-danger" })
+        </div>
+    </div>
+}
+
+
+
+
+
+@*<table class="table">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Nombre)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Respuestas)
+            </th>
+
+        </tr>
+
+    @foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Nombre)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Respuestas.FirstOrDefault().Nombre)
+            </td>
+
+        </tr>
+    }
+
+    </table>*@

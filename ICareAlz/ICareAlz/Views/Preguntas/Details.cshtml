@@ -1,0 +1,85 @@
+﻿@model ICareAlz.Models.Pregunta
+
+@{
+    ViewBag.Title = "Detalles";
+}
+
+<h2>Detalles</h2>
+
+<div>
+    <h4>Pregunta</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Nombre)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Nombre)
+        </dd>
+        
+        <dt style="margin-top:10px;">
+            @Html.DisplayNameFor(model => model.Descripcion)
+        </dt>
+
+        <dd>
+            @if (string.IsNullOrEmpty(Model.Descripcion))
+            {
+                <p>No hay descripción para esta pregunta</p>
+
+            }
+            else
+            {
+                @Html.DisplayFor(model => model.Descripcion)
+            }
+
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Editar", "Edit", new { id = Model.PreguntaId }, new { @class = "btn btn-info" }) |
+    @Html.ActionLink("Asignar Respuesta", "AgregarRespuesta", new { id = Model.PreguntaId }, new { @class = "btn btn-warning" }) |
+    @Html.ActionLink("Regresar", "Index", new { }, new { @class = "btn btn-success" })
+</p>
+
+<br />
+<hr />
+
+@if (Model.Respuestas.Count == 0)
+{
+    <h4>No hay respuestas para esta pregunta</h4>
+}
+else
+{
+    <table class="table">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Respuestas.FirstOrDefault().Nombre)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Respuestas.FirstOrDefault().Valor)
+            </th>
+            <th></th>
+        </tr>
+
+        @foreach (var item in Model.Respuestas)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Nombre)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Valor)
+                </td>
+                <td>
+                    @Html.ActionLink("Editar", "EditarRespuesta", new { id = item.RespuestaId }, new { @class="btn btn-info"}) |
+                    @Html.ActionLink("Eliminar", "EliminarRespuesta", new { id = item.RespuestaId }, new { @class="btn btn-danger", onclick = "return confirm('¿Estás seguro de borrar esta respuesta?')" })
+                </td>
+            </tr>
+        }
+    
+    </table>
+
+}
+

@@ -1,0 +1,20 @@
+﻿@{
+    ViewBag.Title = "Solicitudes";
+}
+
+<h2>Mensaje</h2>
+<div class="row">
+    <div class="col-md-8">
+        <h3>Haz aceptado una solicitud de registro!!!</h3>
+        <br />
+        <img src="~/Content/Images/success.jpg" alt="Solicitud Aceptada" />
+        <p>
+           Haz integrado al equipo de CareAlz a un nuevo integrante..
+        </p>
+        <br />
+        @Html.ActionLink("Ir al Inicio", "SolicitudesAceptadas","Solicitudes", new { }, new { @class = "btn btn-success" })
+
+  </div>
+</div>
+
+

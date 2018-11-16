@@ -38,6 +38,11 @@ namespace ICareAlz.Controllers
             return View(solicitudes.ToList());
         }
 
+        public ActionResult Success()
+        {
+            return View();
+        }
+
         public async Task Validar(int? id)
         {
             if (id == null)
@@ -52,7 +57,7 @@ namespace ICareAlz.Controllers
             {
                 await EnviarCorreo(id);
                 this.RegistrarInstituto(solicitud);
-                RedirectToAction("Index", "RequestInstitutes");
+                RedirectToAction("Success");
             }
             ModelState.AddModelError(string.Empty, response.Message);
 
@@ -78,6 +83,10 @@ namespace ICareAlz.Controllers
                 Telefono = solicitud.Telefono,
                 
             };
+            db.Institutos.Add(instituto);
+            db.SaveChanges();
+            UsersHelper.CreateUserASP(solicitud.Correo, "Instituto", solicitud.Password);
+
         }
 
         public async Task EnviarCorreo(int? id)
