@@ -4,14 +4,26 @@
     ViewBag.Title = "Iniciar sesión";
 }
 
-<h2>@ViewBag.Title.</h2>
-<div class="row">
-    <div class="col-md-8">
-        <section id="loginForm">
+<br />
+<br />
+<div class="row" style="background-image:url(../../Content/Images/login.jpg); height:600px">
+    <br />
+    <br />
+    <div class="col-md-4">
+        @*<section id="socialLoginForm">
+                @Html.Partial("_ExternalLoginsListPartial", new ExternalLoginListViewModel { ReturnUrl = ViewBag.ReturnUrl })
+            </section>*@
+        <h1 style="color:white">@ViewBag.Title.</h1>
+    </div>
+    <div class="col-md-2">
+
+    </div>
+    <div class="col-md-5" style="background-color:white; border-radius:8px">
+        <section id="loginForm" style="height:280px">
             @using (Html.BeginForm("Login", "Account", new { ReturnUrl = ViewBag.ReturnUrl }, FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
             {
                 @Html.AntiForgeryToken()
-                <h4>Use una cuenta local para iniciar sesión.</h4>
+                <h4>Ingresa los siguientes datos para iniciar sesión.</h4>
                 <hr />
                 @Html.ValidationSummary(true, "", new { @class = "text-danger" })
                 <div class="form-group">
@@ -38,24 +50,31 @@
                 </div>
                 <div class="form-group">
                     <div class="col-md-offset-2 col-md-10">
-                        <input type="submit" value="Iniciar sesión" class="btn btn-default" />
+                        <input type="submit" value="Iniciar sesión" class="btn btn-success" />
+                        @Html.ActionLink("Cancelar", "Index","Home", new { },new { @class="btn btn-danger"})
                     </div>
                 </div>
-                <p>
+                @*<p>
                     @Html.ActionLink("Registrar como nuevo usuario", "Register")
-                </p>
+                </p>*@
+
+
                 @* Habilite esta opción después de habilitar la confirmación de la cuenta para la función de restablecimiento de contraseña
-                    <p>
-                        @Html.ActionLink("¿Ha olvidado su contraseña?", "ForgotPassword")
-                    </p>*@
+                <p>
+                    @Html.ActionLink("¿Ha olvidado su contraseña?", "ForgotPassword")
+                </p>*@
             }
+
         </section>
+
+        <br />
+        <br />
+        <br />
+        <br />
+
     </div>
-    <div class="col-md-4">
-        <section id="socialLoginForm">
-            @Html.Partial("_ExternalLoginsListPartial", new ExternalLoginListViewModel { ReturnUrl = ViewBag.ReturnUrl })
-        </section>
-    </div>
+
+   
 </div>
 
 @section Scripts {

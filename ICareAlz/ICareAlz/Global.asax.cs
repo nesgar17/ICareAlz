@@ -18,7 +18,7 @@ namespace ICareAlz
             AreaRegistration.RegisterAllAreas();
             GlobalConfiguration.Configure(WebApiConfig.Register);
             FilterConfig.RegisterGlobalFilters(GlobalFilters.Filters);
-            this.checkRolesAndSuperUser();
+            checkRolesAndSuperUser();
             RouteConfig.RegisterRoutes(RouteTable.Routes);
             Database.SetInitializer(new MigrateDatabaseToLatestVersion<Models.DataContext, Migrations.Configuration>());
             BundleConfig.RegisterBundles(BundleTable.Bundles);
@@ -29,6 +29,8 @@ namespace ICareAlz
         {
             UsersHelper.CheckRole("Admin");
             UsersHelper.CheckRole("Instituto");
+            UsersHelper.CheckRole("Paciente");
+            UsersHelper.CheckRole("Usuario");
             UsersHelper.CheckSuperUser();
         }
 

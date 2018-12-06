@@ -13,20 +13,22 @@ namespace ICareAlz.Controllers
 
         public ActionResult HacerTest()
         {
-            var respuesta = db.Respuestas;
+            var preguntas = db.Preguntas;
 
-            var preguntas = db.Preguntas.Where( p => p.PreguntaId == respuesta.FirstOrDefault().PreguntaId);
+            //var respuesta = db.Respuestas;
 
-            var preguntaview = new TestView
-            {
-                Nombre = preguntas.FirstOrDefault().Nombre,
-                NombreRespuesta = respuesta.FirstOrDefault().Nombre,
-                PreguntaId = preguntas.FirstOrDefault().PreguntaId,
-                RespuestaId = respuesta.FirstOrDefault().RespuestaId,
-                Valor = respuesta.FirstOrDefault().Valor,
-            };
+            //var preguntas = db.Preguntas.Where( p => p.PreguntaId == respuesta.FirstOrDefault().PreguntaId);
 
-            return View(preguntaview);
+            //var preguntaview = new TestView
+            //{
+            //    Nombre = preguntas.FirstOrDefault().Nombre,
+            //    NombreRespuesta = respuesta.FirstOrDefault().Nombre,
+            //    PreguntaId = preguntas.FirstOrDefault().PreguntaId,
+            //    RespuestaId = respuesta.FirstOrDefault().RespuestaId,
+            //    Valor = respuesta.FirstOrDefault().Valor,
+            //};
+
+            return View();
         }
 
 

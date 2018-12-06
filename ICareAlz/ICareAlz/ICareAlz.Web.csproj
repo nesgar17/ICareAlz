@@ -210,7 +210,10 @@
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\AdministradoresController.cs" />
+    <Compile Include="Controllers\API\UsuariosController.cs" />
     <Compile Include="Controllers\CategoriasController.cs" />
+    <Compile Include="Controllers\CategoriaTipsController.cs" />
+    <Compile Include="Controllers\DietasController.cs" />
     <Compile Include="Controllers\EstadosController.cs" />
     <Compile Include="Controllers\GenericController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
@@ -221,6 +224,8 @@
     <Compile Include="Controllers\RespuestasController.cs" />
     <Compile Include="Controllers\SolicitudesController.cs" />
     <Compile Include="Controllers\TestController.cs" />
+    <Compile Include="Controllers\TipsController.cs" />
+    <Compile Include="Controllers\UsuariosController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -234,7 +239,9 @@
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Administrador.cs" />
     <Compile Include="Models\Categoria.cs" />
+    <Compile Include="Models\CategoriaTip.cs" />
     <Compile Include="Models\DataContext.cs" />
+    <Compile Include="Models\Dieta.cs" />
     <Compile Include="Models\Estado.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\Instituto.cs" />
@@ -246,6 +253,8 @@
     <Compile Include="Models\Respuesta.cs" />
     <Compile Include="Models\Solicitud.cs" />
     <Compile Include="Models\TestView.cs" />
+    <Compile Include="Models\Tip.cs" />
+    <Compile Include="Models\Usuario.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
   </ItemGroup>
@@ -254,7 +263,16 @@
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\Images\anciano.jpg" />
+    <Content Include="Content\Images\anciano1.jpg" />
+    <Content Include="Content\Images\depositphotos_21189785-stock-photo-happy-seniors.jpg" />
+    <Content Include="Content\Images\Feliz_adulto_mayor_0.jpg" />
+    <Content Include="Content\Images\icons8-cerebro-24.png" />
+    <Content Include="Content\Images\icons8-cerebro-64.png" />
+    <Content Include="Content\Images\index.jpg" />
+    <Content Include="Content\Images\login.jpg" />
     <Content Include="Content\Images\success.jpg" />
+    <Content Include="Content\Menu.css" />
     <Content Include="Content\slider.css" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
@@ -267,6 +285,8 @@
     </Content>
     <None Include="Scripts\jquery-3.3.1.intellisense.js" />
     <Content Include="Scripts\combosGeneric.js" />
+    <Content Include="Scripts\fastclick.js" />
+    <Content Include="Scripts\fixed-responsive-nav.js" />
     <Content Include="Scripts\jquery-3.3.1.js" />
     <Content Include="Scripts\jquery-3.3.1.min.js" />
     <Content Include="Scripts\jquery-3.3.1.slim.js" />
@@ -277,6 +297,9 @@
     <Content Include="Scripts\jquery.validate.unobtrusive.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
     <Content Include="Scripts\modernizr-2.8.3.js" />
+    <Content Include="Scripts\responsive-nav.js" />
+    <Content Include="Scripts\scroll.js" />
+    <Content Include="Scripts\slider.js" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -358,9 +381,31 @@
     <Content Include="Views\Preguntas\EditarRespuesta.cshtml" />
     <Content Include="Views\Preguntas\HacerTest.cshtml" />
     <Content Include="Views\Test\HacerTest.cshtml" />
+    <Content Include="Views\CategoriaTips\Create.cshtml" />
+    <Content Include="Views\CategoriaTips\Delete.cshtml" />
+    <Content Include="Views\CategoriaTips\Details.cshtml" />
+    <Content Include="Views\CategoriaTips\Edit.cshtml" />
+    <Content Include="Views\CategoriaTips\Index.cshtml" />
+    <Content Include="Views\Tips\Create.cshtml" />
+    <Content Include="Views\Tips\Delete.cshtml" />
+    <Content Include="Views\Tips\Details.cshtml" />
+    <Content Include="Views\Tips\Edit.cshtml" />
+    <Content Include="Views\Tips\Index.cshtml" />
+    <Content Include="Views\Usuarios\Create.cshtml" />
+    <Content Include="Views\Usuarios\Delete.cshtml" />
+    <Content Include="Views\Usuarios\Details.cshtml" />
+    <Content Include="Views\Usuarios\Edit.cshtml" />
+    <Content Include="Views\Usuarios\Index.cshtml" />
+    <Content Include="Views\Usuarios\Mensaje.cshtml" />
+    <Content Include="Views\Dietas\Create.cshtml" />
+    <Content Include="Views\Dietas\Delete.cshtml" />
+    <Content Include="Views\Dietas\Details.cshtml" />
+    <Content Include="Views\Dietas\Edit.cshtml" />
+    <Content Include="Views\Dietas\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Content\ContenidoTips\" />
     <Folder Include="Content\Fotos\" />
     <Folder Include="Views\Generic\" />
   </ItemGroup>

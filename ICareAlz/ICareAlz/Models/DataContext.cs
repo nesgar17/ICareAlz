@@ -41,5 +41,13 @@
         public DbSet<Respuesta> Respuestas { get; set; }
 
         public DbSet<Test> Tests { get; set; }
+
+        public System.Data.Entity.DbSet<ICareAlz.Models.CategoriaTip> CategoriaTips { get; set; }
+
+        public System.Data.Entity.DbSet<ICareAlz.Models.Tip> Tips { get; set; }
+
+        public System.Data.Entity.DbSet<ICareAlz.Models.Usuario> Usuarios { get; set; }
+
+        public System.Data.Entity.DbSet<ICareAlz.Models.Dieta> Dietas { get; set; }
     }
 }

@@ -1,55 +1,94 @@
 ﻿<!DOCTYPE html>
 <html>
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>@ViewBag.Title | CareAlz</title>
     @Styles.Render("~/Content/css")
+   
     @Scripts.Render("~/bundles/modernizr")
-
+    <link href="~/Content/Menu.css" rel="stylesheet" />
+   
 </head>
 <body>
-    <div class="navbar navbar-inverse navbar-fixed-top">
-        <div class="container">
-            <div class="navbar-header" >
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-                @Html.ActionLink("CareAlz", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
+    <div class="navbar-fixed-top">
+        <div class="navbar">
+            <a class="navbar-brand" href="@Url.Action("Index","Home")">
+                <span>
+                    <img src="~/Content/Images/icons8-cerebro-24.png" alt="CareAlz" />
+                </span>
+                <span>CareAlz</span>
+            </a>
+
+
+            <a href="#news">Acerca de nosotros</a>
+            <a href="#news">Conoce del AlzHeimer</a>
+            @*<div class="dropdown">
+            <button class="dropbtn">
+                Dropdown
+                <i class="fa fa-caret-down"></i>
+            </button>
+            <div class="dropdown-content">
+                <a href="#">Link 1</a>
+                <a href="#">Link 2</a>
+                <a href="#">Link 3</a>
             </div>
-            <div class="navbar-collapse collapse">
-                <ul class="nav navbar-nav">
-                    <li>@Html.ActionLink("Inicio", "Index", "Home")</li>
-                    <li>@Html.ActionLink("Acerca de", "About", "Home")</li>
-                    <li>@Html.ActionLink("Contacto", "Contact", "Home")</li>
+        </div>*@
 
-                    @if (User.Identity.Name == "ngarciagarcia33@gmail.com")
-                    {
-                        <li>@Html.ActionLink("Administradores", "Index", "Administradores")</li>
-                        <li>@Html.ActionLink("Noticias", "Index", "Administradores")</li>
-                      
-                    }
-
-                    @if (User.IsInRole("Admin"))
-                    {
-                        <li>@Html.ActionLink("Solicitudes", "Index", "Administradores")</li>
-                        <li>@Html.ActionLink("Test", "Index", "Preguntas")</li>
-                    }
-
-                    @if (User.IsInRole("Instituto"))
-                    {
-                        <li>@Html.ActionLink("Tips", "Index", "Administradores")</li>
-                        <li>@Html.ActionLink("Dietas", "Index", "Preguntas")</li>
-                    }
-
-                </ul>
-                @Html.Partial("_LoginPartial")
-            </div>
+            @if (User.Identity.Name == "ngarciagarcia33@gmail.com")
+            {
+                <a href="@Url.Action("Index","Administradores")">Administradores</a>
+                <a href="@Url.Action("Index","Solicitudes")">Solicitudes</a>
+            }
+                <section style="padding-right:24px;">
+            @Html.Partial("_LoginPartial")
+                </section>
         </div>
+
     </div>
+  
+
+    @*<div class="navbar navbar-inverse navbar-fixed-top">
+            <div class="container">
+                <div class="navbar-header" >
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    @Html.ActionLink("CareAlz", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
+                </div>
+                <div class="navbar-collapse collapse">
+                    <ul class="nav navbar-nav">
+                        <li>@Html.ActionLink("Inicio", "Index", "Home")</li>
+                        <li>@Html.ActionLink("Acerca de", "About", "Home")</li>
+                        <li>@Html.ActionLink("Contacto", "Contact", "Home")</li>
+
+                        @if (User.Identity.Name == "ngarciagarcia33@gmail.com")
+                        {
+                            <li>@Html.ActionLink("Administradores", "Index", "Administradores")</li>
+                            <li>@Html.ActionLink("Noticias", "Index", "Administradores")</li>
+
+                        }
+
+                        @if (User.IsInRole("Admin"))
+                        {
+                            <li>@Html.ActionLink("Solicitudes", "Index", "Administradores")</li>
+                            <li>@Html.ActionLink("Test", "Index", "Preguntas")</li>
+                        }
+
+                        @if (User.IsInRole("Instituto"))
+                        {
+                            <li>@Html.ActionLink("Tips", "Index", "Administradores")</li>
+                            <li>@Html.ActionLink("Dietas", "Index", "Preguntas")</li>
+                        }
+
+                    </ul>
+                    @Html.Partial("_LoginPartial")
+                </div>
+            </div>
+        </div>*@
     <div class="container body-content">
         @RenderBody()
         <hr />

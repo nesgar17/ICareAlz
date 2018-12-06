@@ -1,34 +1,83 @@
 ﻿@{
     ViewBag.Title = "Inicio";
 }
+<br />
 
-<div class="jumbotron">
-        <h1>ASP.NET</h1>
-        <p class="lead">ASP.NET is a free web framework for building great Web sites and Web applications using HTML, CSS and JavaScript.</p>
-        <p><a href="https://asp.net" class="btn btn-primary btn-lg">Learn more &raquo;</a></p>
-    </div>
-
-
-<div class="row">
-    <div class="col-md-4">
-        <h2>Envia una Solicitud</h2>
-        <p>
-            ASP.NET MVC gives you a powerful, patterns-based way to build dynamic websites that
-            enables a clean separation of concerns and gives you full control over markup
-            for enjoyable, agile development.
-        </p>
-        <p>
-            @Html.ActionLink("Enviar", "Create", "Solicitudes", new { }, new { @class = "btn btn-success" })
-        </p>
-    </div>
-    <div class="col-md-4">
-        <h2>Get more libraries</h2>
-        <p>NuGet is a free Visual Studio extension that makes it easy to add, remove, and update libraries and tools in Visual Studio projects.</p>
-        @Html.ActionLink("Hacer Test", "HacerTest", "Test", new { }, new { @class = "btn btn-primary" })
-    </div>
-    <div class="col-md-4">
-        <h2>Web Hosting</h2>
-        <p>You can easily find a web hosting company that offers the right mix of features and price for your applications.</p>
-        <p><a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301867">Learn more &raquo;</a></p>
-    </div>
+<div class="row" style="background-image:url(../../Content/Images/anciano1.jpg);height:400px; margin-left:120px; background-repeat:no-repeat">
+    @*<img src="~/Content/Images/anciano.jpg" alt="Alternate Text" style="height:550px; width:1090px; padding-left:40px;" />*@
+    <p style="color:white; padding-left:50px; padding-top:60px;font-size:90px">CareAlz</p>
+    <h3 style="color:white; padding-left:70px; padding-bottom:1px;">Atesorando tus recuerdos</h3>
 </div>
+
+
+
+
+<br />
+<br />
+<div class="row">
+
+    <div class="col-md-4">
+        <div class="panel panel-primary">
+            <div class="panel-heading">
+                Haz un test
+                <a class="btn btn-primary" role="button" data-toggle="collapse" href="#collapseExample" aria-expanded="false" aria-controls="collapseExample" style="margin-left:190px;">
+                    <span class="glyphicon glyphicon-plus"></span>
+                </a>
+            </div>
+            <div class="collapse" id="collapseExample">
+                <div class="well">
+                    <h3>Haz el Test</h3>
+                    <p>Quieres saber si estas propenso a tener la enfermedad, con este test lo podras saber y recibir ayuda<p>
+                    <p>@Html.ActionLink("Hacer Test", "Create", "RequestInstitutes", new { }, new { @class = "btn btn-success" })</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-4">
+        <div class="panel panel-success">
+            <div class="panel-heading">
+                Registrate aqui
+                <a class="btn btn-success" role="button" data-toggle="collapse" href="#collapseExample1" aria-expanded="false" aria-controls="collapseExample" style="margin-left:180px;">
+                    <span class="glyphicon glyphicon-plus"></span>
+                </a>
+            </div>
+            <div class="collapse" id="collapseExample1">
+                <div class="well">
+                    <h3>Registrate</h3>
+                    <p>
+                        Para obtener todos los beneficios de la aplicación es necesari que tengas una cuenta de usuario en
+                        CareAlz
+                    <p>
+                        <span></span>
+                    <p>@Html.ActionLink("Registarme", "Create", "Usuarios", new { }, new { @class = "btn btn-warning" })</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-4">
+        <div class="panel panel-danger">
+            <div class="panel-heading">
+                Envianos una solicitud
+
+                <a class="btn btn-danger" role="button" data-toggle="collapse" href="#collapseExample2" aria-expanded="false" aria-controls="collapseExample" style="margin-left:140px;">
+                    <span class="glyphicon glyphicon-plus"></span>
+                </a>
+            </div>
+
+            <div class="collapse" id="collapseExample2">
+                <div class="well">
+                    <h3>Envia una solicitud</h3>
+                    <p style="justify-content:center">
+                        Eres un centro de ayuda, hospital especializado o alguna organización que ayuda a personas con Alzheimer
+                        envianos una solicitud para formar parte de CareAlz
+                    <p>
+                    <p>@Html.ActionLink("Enviar Solicitud", "Create", "Solicitudes", new { }, new { @class = "btn btn-info" })</p>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+</div>
+
+

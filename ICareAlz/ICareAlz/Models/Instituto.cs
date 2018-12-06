@@ -65,19 +65,22 @@ namespace ICareAlz.Models
         [DataType(DataType.ImageUrl)]
         public string Logo { get; set; }
 
+        [Required(ErrorMessage = "EL campo {0} es obligatorio")]
+        [Display(Name = "Página Web")]
+        [DataType(DataType.Url)]
+        public string Url { get; set; }
+
         [NotMapped]
         public HttpPostedFileBase LogoFile { get; set; }
 
 
+       
+        [Display(Name = "Dirección")]
         public string FullAddress
         {
             get
             {
-                return string.Format("{0},{1},{2},{3}"
-                , Estado.Nombre
-                , Municipio.Nombre
-                , Localidad.Nombre
-                , Direccion);
+                return $"{Estado.Nombre}{Municipio.Nombre}{Localidad.Nombre}{Direccion}";
             }
         }
 
@@ -88,5 +91,9 @@ namespace ICareAlz.Models
         public virtual Localidad Localidad { get; set; }
 
         public virtual Categoria Categoria { get; set; }
+
+        public virtual ICollection<Tip> Tips { get; set; }
+
+        public virtual ICollection<Dieta> Dietas { get; set; }
     }
 }

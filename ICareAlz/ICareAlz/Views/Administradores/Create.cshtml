@@ -81,15 +81,15 @@
         </div>
     </div>
 
-    <div class="form-group">
-        @Html.LabelFor(model => model.FotoFile, "Foto", htmlAttributes: new { @class = "control-label col-md-2" })
-        <div class="col-md-10">
-            <span class="btn btn-primary btn-file">
+        <div class="form-group">
+            @Html.LabelFor(model => model.FotoFile, "Imagen o Video", htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                <span class="btn btn-primary btn-file">
 
-                @Html.TextBoxFor(model => model.FotoFile, new { type = "file" })
-            </span>
+                    @Html.TextBoxFor(model => model.FotoFile, new { type = "file" })
+                </span>
+            </div>
         </div>
-    </div>
     <div class="form-group">
         @Html.LabelFor(model => model.Correo, htmlAttributes: new { @class = "control-label col-md-2" })
         <div class="col-md-10">

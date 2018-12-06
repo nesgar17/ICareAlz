@@ -87,6 +87,19 @@ namespace ICareAlz.Helpers
             return colonies.OrderBy(e => e.Nombre).ToList();
         }
 
+        public static List<CategoriaTip> GetCategoriaTips()
+        {
+            var catTips = db.CategoriaTips.ToList();
+            catTips.Add(new CategoriaTip
+            {
+                CategoriaTipId = 0,
+                Nombre = "[--Selecciona un Estado--]",
+            });
+
+            return catTips.OrderBy(e => e.Nombre).ToList();
+        }
+
+
         public void Dispose()
         {
             db.Dispose();

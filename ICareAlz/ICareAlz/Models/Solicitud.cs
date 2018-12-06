@@ -66,6 +66,11 @@ namespace ICareAlz.Models
         [DataType(DataType.Date)]
         public DateTime FechaFundacion { get; set; }
 
+        [Required(ErrorMessage = "EL campo {0} es obligatorio")]
+        [Display(Name = "Página Web")]
+        [DataType(DataType.Url)]
+        public string Url { get; set; }
+
         [DataType(DataType.ImageUrl)]
         public string Logo { get; set; }
 
@@ -73,15 +78,12 @@ namespace ICareAlz.Models
         public HttpPostedFileBase LogoFile { get; set; }
 
 
+        [Display(Name = "Dirección")]
         public string FullAddress
         {
             get
             {
-                return string.Format("{0},{1},{2},{3}"
-                , Estado.Nombre
-                , Municipio.Nombre
-                , Localidad.Nombre
-                , Direccion);
+                return $"{Estado.Nombre}{Municipio.Nombre}{Localidad.Nombre}{Direccion}";
             }
         }
 

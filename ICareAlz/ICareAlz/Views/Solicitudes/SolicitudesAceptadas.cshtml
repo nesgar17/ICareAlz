@@ -7,8 +7,10 @@
 <h2>Lista de Solicitudes Aceptadas</h2>
 
 <hr />
-<br />
 
+@Html.ActionLink("Regresar", "Index","Solicitudes", new { }, new { @class = "btn btn-success" })
+<br />
+<br />
 
 <table class="table">
     <tr>
@@ -33,7 +35,7 @@
         <th>
             @Html.DisplayNameFor(model => model.Logo)
         </th>
-      
+
     </tr>
 
     @foreach (var item in Model)
@@ -58,9 +60,12 @@
                 @Html.DisplayFor(modelItem => item.Correo)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.Logo)
+                @if (!string.IsNullOrEmpty(item.Logo))
+                {
+                    <img src="@Url.Content(item.Logo)" alt="Image" style="width:70px;height:70px;max-width:70%; height:auto;" />
+                }
             </td>
-            
+
         </tr>
     }
 

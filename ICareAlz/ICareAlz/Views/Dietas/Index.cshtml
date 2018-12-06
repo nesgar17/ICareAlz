@@ -1,0 +1,61 @@
+﻿@model IEnumerable<ICareAlz.Models.Dieta>
+
+@{
+    ViewBag.Title = "Dietas";
+}
+
+<h2>Lista de dietas</h2>
+
+<p>
+    <a class="btn btn-primary" href="@Url.Action("Create","Dietas")">
+        <span class="glyphicon glyphicon-plus"></span>
+        <span>Agregar</span>
+    </a>
+</p>
+<br />
+<table class="table">
+    <tr>
+       
+        <th>
+            @Html.DisplayNameFor(model => model.Titulo)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Descripcion)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.FechaPublicacion)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Contenido)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+      
+        <td>
+            @Html.DisplayFor(modelItem => item.Titulo)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Descripcion)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.FechaPublicacion)
+        </td>
+        <td>
+            @if (!string.IsNullOrEmpty(item.Contenido))
+            {
+                <img src="@Url.Content(item.Contenido)" alt="Image" style="width:70px;height:70px;max-width:70%; height:auto;" />
+            }
+        </td>
+        <td>
+            @Html.ActionLink(" ", "Edit", new { id = item.DietaId }, new { @class = "btn btn-info glyphicon glyphicon-pencil" }) |
+            @Html.ActionLink(" ", "Details", new { id = item.DietaId }, new { @class = "btn btn-warning glyphicon glyphicon-list-alt" }) |
+            @Html.ActionLink(" ", "Delete", new { id = item.DietaId }, new { @class = "btn btn-danger glyphicon glyphicon-trash" })
+
+        </td>
+    </tr>
+}
+
+</table>

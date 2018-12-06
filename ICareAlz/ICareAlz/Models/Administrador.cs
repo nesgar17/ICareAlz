@@ -58,19 +58,14 @@
         [DataType(DataType.Password)]
         public string Password { get; set; }
 
-        //[Display(Name = "Dirección")]
-        //public string FullAddress
-        //{
-        //    get
-        //    {
-        //        return string.Format("{0},{1},{2},{3}"
-        //                            , State.Description
-        //                            , Municipality.Description
-        //                            , Colony.Description
-        //                            , Address);
-        //    }
-        //}
-
+        [Display(Name = "Dirección")]
+        public string FullAddress
+        {
+            get
+            {
+                return $"{Estado.Nombre}{Municipio.Nombre}{Localidad.Nombre}{Direccion}";
+            }
+        }
         public virtual Estado Estado { get; set; }
 
         public virtual Municipio Municipio { get; set; }
